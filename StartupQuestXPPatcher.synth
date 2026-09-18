@@ -1,0 +1,6 @@
+{
+  "AddGitPatcher": {
+    "Url": "https://github.com/hoskonen/synthesis-startupquestxppatcher",
+    "SelectedProject": "StartupQuestXPPatcher\\StartupQuestXPPatcher.csproj"
+  }
+}
