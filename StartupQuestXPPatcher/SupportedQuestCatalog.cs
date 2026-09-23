@@ -36,6 +36,26 @@ public static class SupportedQuestCatalog
                 Quest.TypeEnum.MainQuest),
         ]);
 
+    public static readonly SupportedPlugin Frostfall = new(
+        ModKey.FromFileName("Frostfall.esp"),
+        [
+            new SupportedQuest(
+                0x000177D7,
+                "_Frost_TrackingQuest",
+                "Frostfall",
+                Quest.TypeEnum.SideQuest),
+        ]);
+
+    public static readonly SupportedPlugin SunHelm = new(
+        ModKey.FromFileName("SunHelmSurvival.esp"),
+        [
+            new SupportedQuest(
+                0x001E137C,
+                "_SHStartPrompt",
+                "SunHelm",
+                Quest.TypeEnum.SideQuest),
+        ]);
+
     public static readonly ImmutableArray<SupportedPlugin> Plugins =
-        [AlternateStart];
+        [AlternateStart, Frostfall, SunHelm];
 }

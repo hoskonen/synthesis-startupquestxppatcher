@@ -16,6 +16,7 @@ public static class QuestTypePatcher
         ArgumentNullException.ThrowIfNull(output);
 
         int supportedPluginsDetected = 0;
+        int supportedPluginsSkipped = 0;
         int questsExamined = 0;
         int questsPatched = 0;
         int questsAlreadyNone = 0;
@@ -29,6 +30,7 @@ public static class QuestTypePatcher
 
             if (!isActive)
             {
+                supportedPluginsSkipped++;
                 output.WriteLine(
                     $"{plugin.ModKey.FileName.String} was not detected; no quest overrides were created.");
                 continue;
@@ -73,6 +75,7 @@ public static class QuestTypePatcher
             WriteSummary(
                 output,
                 supportedPluginsDetected,
+                supportedPluginsSkipped,
                 questsExamined,
                 questsPatched,
                 questsAlreadyNone,
@@ -99,6 +102,7 @@ public static class QuestTypePatcher
         WriteSummary(
             output,
             supportedPluginsDetected,
+            supportedPluginsSkipped,
             questsExamined,
             questsPatched,
             questsAlreadyNone,
@@ -108,6 +112,7 @@ public static class QuestTypePatcher
     private static void WriteSummary(
         TextWriter output,
         int supportedPluginsDetected,
+        int supportedPluginsSkipped,
         int questsExamined,
         int questsPatched,
         int questsAlreadyNone,
@@ -116,6 +121,7 @@ public static class QuestTypePatcher
         output.WriteLine($"""
             Startup Quest XP Patcher summary
             Supported plugins detected: {supportedPluginsDetected}
+            Supported plugins skipped: {supportedPluginsSkipped}
             Quests examined: {questsExamined}
             Quests patched: {questsPatched}
             Quests already None: {questsAlreadyNone}

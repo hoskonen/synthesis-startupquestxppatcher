@@ -9,17 +9,21 @@ using the **Experience** leveling mod.
 Currently supported:
 
 - **Alternate Start - Live Another Life**
+- **Frostfall**
+- **SunHelm**
 
 The following quests are patched:
 
 - `ARTHLALChargenQuest` — **A Second Chance**
 - `ARTHLALRumorsOfWarQuest` — **Live Another Life**
+- `_Frost_TrackingQuest` — **Frostfall**
+- `_SHStartPrompt` — **SunHelm**
 
 For each quest, the patcher changes:
 
 ```text
 QUST -> DNAM -> Type
-Main Quest -> None
+Main Quest / Side Quest -> None
 ```
 
 The patcher resolves the current winning override and changes only the quest
@@ -27,10 +31,8 @@ type. Downstream changes to VMAD, scripts, aliases, stages, objectives,
 objective targets, conditions, and other quest data are preserved.
 
 If a quest is already set to `None`, no unnecessary override is created. If
-Alternate Start is not installed, the patcher exits successfully without
-creating quest overrides.
-
-Additional startup mods, such as Frostfall, may be supported in the future.
+a supported mod is not installed, that mod is skipped without creating quest
+overrides. Each supported mod is detected and patched independently.
 
 ## Installation and use
 
