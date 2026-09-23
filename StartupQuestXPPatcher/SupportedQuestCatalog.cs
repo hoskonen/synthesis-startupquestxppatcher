@@ -50,7 +50,7 @@ public static class SupportedQuestCatalog
         ModKey.FromFileName("SunHelmSurvival.esp"),
         [
             new SupportedQuest(
-                0x001E137C,
+                0x0041E37C,
                 "_SHStartPrompt",
                 "SunHelm",
                 Quest.TypeEnum.SideQuest),
