@@ -16,12 +16,14 @@ public sealed record SupportedQuest(
 }
 
 public sealed record SupportedPlugin(
+    string DisplayName,
     ModKey ModKey,
     ImmutableArray<SupportedQuest> Quests);
 
 public static class SupportedQuestCatalog
 {
     public static readonly SupportedPlugin AlternateStart = new(
+        "Alternate Start - Live Another Life",
         ModKey.FromFileName("Alternate Start - Live Another Life.esp"),
         [
             new SupportedQuest(
@@ -37,6 +39,7 @@ public static class SupportedQuestCatalog
         ]);
 
     public static readonly SupportedPlugin Frostfall = new(
+        "Frostfall",
         ModKey.FromFileName("Frostfall.esp"),
         [
             new SupportedQuest(
@@ -47,6 +50,7 @@ public static class SupportedQuestCatalog
         ]);
 
     public static readonly SupportedPlugin SunHelm = new(
+        "SunHelm",
         ModKey.FromFileName("SunHelmSurvival.esp"),
         [
             new SupportedQuest(
